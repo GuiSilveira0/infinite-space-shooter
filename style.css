@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+
+span{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 15px;
+}
+
+.fa-heart{
+    color: red;
+}
+
+.grid{
+    width: 300px;
+    height: 500px;
+    border: solid white 1px;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('imgs/space.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.grid div{
+    width: 20px;
+    height: 20px;
+}
+
+h5{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.invader{
+    color: rgb(0, 177, 0);
+    font-size: 23px;
+}
+
+.shooter{
+    color: rgb(255, 41, 41);
+    font-size: 40px;
+}
+
+.laser{
+    background-color: rgb(0, 119, 255);
+    border-radius: 40px;
+}
+
+.boom{
+    color: red;
+    font-size: 25px;
+}
+
+.fa-heart{
+    font-size: 20px;
+}
