@@ -3,7 +3,7 @@ const resultsDisplay = document.querySelector('.result')
 const score = document.querySelector('.score')
 const level = document.querySelector('.level')
 const life = document.querySelector('.life')
-let interval = 400
+let interval = 300
 let currentShooterIndex = 202;
 let width = 15;
 let direction = 1;
@@ -24,27 +24,66 @@ for (let i = 0; i < 225; i++) {
 
 const squares = Array.from(document.querySelectorAll('.grid div'))
 
-const invaders = [
+const invadersFormation1 = [
     15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
     30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
     45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
     60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
 ]
 
+const invadersFormation2 = [
+    17, 18, 19, 20, 21, 22,
+    30, 31, 32, 37, 38, 39,
+    45, 46, 47, 52, 53, 54,
+    60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
+]
+
+const invadersFormation3 = [
+    15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+    31, 32, 33, 34, 35, 36, 37, 38,
+    47, 48, 49, 50, 51, 52,
+    64, 65
+]
+
+const invadersFormation4 = [
+    15, 19, 20, 24,
+    31, 32, 33, 36, 37, 38,
+    49, 50,
+    60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
+]
+
+const invadersFormation5 = [
+    18, 19, 20, 21,
+    31, 32, 33, 34, 35, 36, 37, 38,
+    45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+    63, 64, 65, 66,
+]
+
+const invadersFormation6 = [
+    15, 16, 17, 18, 19,
+    35, 36, 37, 38, 39,
+    50, 51, 52, 53, 54,
+    60, 61, 62, 63, 64,
+]
+
+const formation = [
+    invadersFormation1, invadersFormation2, invadersFormation3,
+    invadersFormation4, invadersFormation5, invadersFormation6
+]
+
 randomizeInvaders()
 
 function randomizeInvaders() {
-    for (let i = 0; i < invaders.length; i++) {
+    let randomNum = formation[Math.floor(Math.random() * formation.length)]
 
-        let randomNum = Math.floor(Math.random() * invaders.length)
+    for (let i = 0; i < formation.length; i++) {
 
-        if (randomInvaders === [] && randomNum > 0 && randomNum < 69) {
-            randomInvaders.push(randomNum)
+        if (randomInvaders.length == 0 && randomNum.length > 0) {
+            randomNum.forEach(position => {
+                randomInvaders.push(position)
+            });
 
-        } else if (!randomInvaders.includes(randomNum) && randomNum > 0 && randomNum < 69) {
-            randomInvaders.push(randomNum)
         }
-
     }
 
 }
@@ -132,9 +171,9 @@ function moveInvaders() {
     construct()
 
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
-        health = health - 1 
+        health-- 
 
-        if (health === 0 || health === -1) {
+        if (health == 0) {
             life.innerHTML = 0
             resultsDisplay.innerHTML = 'GAME OVER'
             remove()
@@ -154,13 +193,12 @@ function moveInvaders() {
 
     for (let i = 0; i < randomInvaders.length; i++) {
         if (randomInvaders[i] > currentShooterIndex) {
-            health = health - 1
+            health--
 
-            if (health === 0 || health === -1) {
+            if (health == 0) {
                 life.innerHTML = 0
                 resultsDisplay.innerHTML = 'GAME OVER'
                 remove()
-
                 clearInterval(invadersId)
 
                 document.removeEventListener('keydown', shoot)
@@ -182,17 +220,7 @@ function moveInvaders() {
         level.innerHTML = level1
         invadersRemoved = []
         randomInvaders = []
-
-        if(interval > 200)
-        {
-            interval = interval - 20
-        }
-        else
-        {
-            interval = 200
-        }
-
-        setInterval(moveInvaders, interval)
+        interval -= 10
         randomizeInvaders()
     }
 }
@@ -232,7 +260,7 @@ function shoot(e) {
 
     switch (e.key) {
         case 'ArrowUp':
-            laserId = setInterval(moveLaser, 100)
+            laserId = setInterval(moveLaser, 40)
     }
 
 }
