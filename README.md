@@ -1,4 +1,4 @@
-<div style="text-align: center">
+<div style="text-align:center">
     <h1>👾 Infinite Space Shooter 🤖</h1>
     <img src="imgs/icon.ico">
     <br>
