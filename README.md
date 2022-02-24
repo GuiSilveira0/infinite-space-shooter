@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div align="center">
     <h1>👾 Infinite Space Shooter 🤖</h1>
     <img src="imgs/icon.ico">
     <br>
@@ -37,5 +37,5 @@ When your lives finish the game will stop and you can check how many points you 
 
 # Controls
 <p>🔼 - Arrow Up: Shoot!</p>
-<p>◀️ - Arrow left: Move spaship to left</p>
-<p>▶️ - Arrow rigth: Move spaship to rigth</p>
+<p>◀️ - Arrow left: Move spaceship to left</p>
+<p>▶️ - Arrow rigth: Move spaceship to rigth</p>
