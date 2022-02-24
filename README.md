@@ -24,9 +24,9 @@ HTML, CSS and JavaScript. This game was developed to study more about this amazi
 <p>
 The Game counts with six different templates to spawn Invaders, your objective is shoot and destroy them all with your tiny red spaceship called H300.
 </p>
-<img src="imgs/print1.png">
+<img src="imgs/print1.png" align="center">
 <p>To keep things interesting, the invaders and how amount of they are spawned in a random template every time when you die, goes to next level or refresh the page.</p>
-<img src="imgs/print2.png">
+<img src="imgs/print2.png" align="center">
 <p>
 In the corner of page you have your status, like how many lives remain, your score and the level. When you goes to another level, the invaders will more fast and more harder to hit so give your best to get far and do many points.<br>
 When your lives finish the game will stop and you can check how many points you did and what level you stopped.
